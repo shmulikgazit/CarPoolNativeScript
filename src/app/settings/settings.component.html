@@ -1,0 +1,29 @@
+<ScrollView>
+  <StackLayout class="p-4">
+    <Label text="User Settings" class="text-2xl font-bold mb-4"></Label>
+    
+    <Label text="Name" class="text-lg mb-2"></Label>
+    <TextField [(ngModel)]="name" hint="Enter your name" class="mb-4 p-2 border rounded"></TextField>
+    
+    <Label text="Email" class="text-lg mb-2"></Label>
+    <TextField [(ngModel)]="email" hint="Enter your email" keyboardType="email" class="mb-4 p-2 border rounded"></TextField>
+    
+    <Label text="Phone" class="text-lg mb-2"></Label>
+    <TextField [(ngModel)]="phone" hint="Enter your phone number" keyboardType="phone" class="mb-4 p-2 border rounded"></TextField>
+    
+    <Label text="School" class="text-lg mb-2"></Label>
+    <TextField [(ngModel)]="school" hint="Enter your school name" class="mb-4 p-2 border rounded"></TextField>
+    
+    <ng-container *ngIf="userType === 'student'">
+      <Label text="Grade" class="text-lg mb-2"></Label>
+      <TextField [(ngModel)]="grade" hint="Enter your grade" keyboardType="number" class="mb-4 p-2 border rounded"></TextField>
+    </ng-container>
+    
+    <ng-container *ngIf="userType === 'parent'">
+      <Label text="Vehicle Capacity" class="text-lg mb-2"></Label>
+      <TextField [(ngModel)]="vehicleCapacity" hint="Enter vehicle capacity" keyboardType="number" class="mb-4 p-2 border rounded"></TextField>
+    </ng-container>
+    
+    <Button text="Save Settings" (tap)="onSave()" class="bg-blue-500 text-white p-2 rounded"></Button>
+  </StackLayout>
+</ScrollView>

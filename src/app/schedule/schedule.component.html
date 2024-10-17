@@ -1,0 +1,10 @@
+<ActionBar title="Schedule"></ActionBar>
+<ListView [items]="schedules" class="list-group">
+  <ng-template let-schedule="item">
+    <StackLayout class="list-group-item p-4">
+      <Label [text]="schedule.time" class="text-lg font-bold"></Label>
+      <Label [text]="schedule.type + ' Shift'" class="text-md"></Label>
+      <Label [text]="'Status: ' + schedule.status" [class]="schedule.status === 'Available' ? 'text-green-500' : (schedule.status === 'Scheduled' ? 'text-blue-500' : 'text-red-500')"></Label>
+    </StackLayout>
+  </ng-template>
+</ListView>

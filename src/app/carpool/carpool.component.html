@@ -1,0 +1,13 @@
+<ActionBar title="Current Carpool"></ActionBar>
+<StackLayout class="p-4">
+  <Label [text]="'Time: ' + currentCarpool.time" class="text-xl mb-2"></Label>
+  <Label [text]="'Driver: ' + currentCarpool.driver" class="text-lg mb-2"></Label>
+  <Label text="Passengers:" class="text-lg mb-2"></Label>
+  <ListView [items]="currentCarpool.passengers" class="mb-2">
+    <ng-template let-passenger="item">
+      <Label [text]="passenger" class="p-2"></Label>
+    </ng-template>
+  </ListView>
+  <Label [text]="'Available Seats: ' + currentCarpool.availableSeats" class="text-lg mb-4"></Label>
+  <Button text="Request Change" class="bg-blue-500 text-white p-2 rounded"></Button>
+</StackLayout>
